@@ -30,6 +30,15 @@ return {
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
+      require('lspconfig').clangd.setup {
+        cmd = { 'clangd' },
+      }
+
+      require('lspconfig').lua_ls.setup {
+        cmd = { 'lua-language-server' },
+        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+      }
+
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
