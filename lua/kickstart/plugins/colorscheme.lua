@@ -12,8 +12,8 @@ return {
         -- Recommended - see "Configuring" below for more config options
         transparent = true,
         italic_comments = true,
-        hide_fillchars = true,
-        borderless_telescope = true,
+        hide_fillchars = false,
+        borderless_telescope = false,
         terminal_colors = true,
       }
       vim.cmd 'colorscheme cyberdream' -- set the colorscheme
