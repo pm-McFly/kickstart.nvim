@@ -3,8 +3,4 @@
 --
 -- See the kickstart.nvim README for more information
 -- print 'Lua configuration loaded successfully!'
-return {
-  require 'custom/plugins/noice',
-  require 'custom/plugins/quickscope',
-  require 'custom/plugins/lazygit',
-}
+return {}
