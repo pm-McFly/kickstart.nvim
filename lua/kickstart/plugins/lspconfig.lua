@@ -30,15 +30,6 @@ return {
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
-      require('lspconfig').clangd.setup {
-        cmd = { 'clangd' },
-      }
-
-      require('lspconfig').lua_ls.setup {
-        cmd = { 'lua-language-server' },
-        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-      }
-
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -175,7 +166,9 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        -- clangd = {
+        --   cmd = { 'clangd' },
+        -- },
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -189,9 +182,9 @@ return {
         --
 
         lua_ls = {
-          -- cmd = {...},
+          cmd = { 'lua-language-server' },
           -- filetypes = { ...},
-          -- capabilities = {},
+          capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
           settings = {
             Lua = {
               completion = {
